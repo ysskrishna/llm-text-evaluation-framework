@@ -21,24 +21,24 @@ def evaluate_response(llm_response: str, actual_response: str) -> Dict[str, floa
     scores = {}
     
     # Relevance: Semantic similarity between LLM and actual response
-    scores['relevance'] = calculate_relevance(llm_response, actual_response)
+    scores[EvaluationCriteria.RELEVANCE.value] = calculate_relevance(llm_response, actual_response)
     
     # Accuracy: Content accuracy and factual correctness
-    scores['accuracy'] = calculate_accuracy(llm_response, actual_response)
+    scores[EvaluationCriteria.ACCURACY.value] = calculate_accuracy(llm_response, actual_response)
     
     # Coherence: Logical flow and readability
-    scores['coherence'] = calculate_coherence(llm_response)
+    scores[EvaluationCriteria.COHERENCE.value] = calculate_coherence(llm_response)
     
     # Completeness: Coverage of expected content
-    scores['completeness'] = calculate_completeness(llm_response, actual_response)
+    scores[EvaluationCriteria.COMPLETENESS.value] = calculate_completeness(llm_response, actual_response)
     
     # Creativity: Originality and unique expression
-    scores['creativity'] = calculate_creativity(llm_response, actual_response)
+    scores[EvaluationCriteria.CREATIVITY.value] = calculate_creativity(llm_response, actual_response)
     
     # Tone: Appropriateness and consistency
-    scores['tone'] = calculate_tone(llm_response)
+    scores[EvaluationCriteria.TONE.value] = calculate_tone(llm_response)
     
      # Alignment with intent: How well it matches user's intended purpose
-    scores['alignment_with_intent'] = calculate_alignment_with_intent(llm_response, actual_response)
+    scores[EvaluationCriteria.ALIGNMENT_WITH_INTENT.value] = calculate_alignment_with_intent(llm_response, actual_response)
     
     return scores

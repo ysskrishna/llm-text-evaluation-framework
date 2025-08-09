@@ -5,6 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "nltk>=3.9.1",
+    "sentence-transformers>=5.1.0",
     "sqlmodel>=0.0.24",
     "streamlit>=1.48.0",
+    "textstat>=0.7.8",
 ]
