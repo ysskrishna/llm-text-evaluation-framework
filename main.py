@@ -1,9 +1,10 @@
 import streamlit as st
+from core.database import init_db
 from components.sidebar import show_sidebar
 
 def main():
     st.set_page_config(page_title="LLM Text Evaluation Framework", layout="wide")
-    
+    init_db()
     show_sidebar()
     
     st.title("LLM Text Evaluation Framework")
@@ -22,7 +23,8 @@ def main():
         if not llm_response.strip() or not actual_response.strip():
             st.error("Please provide both responses.")
         else:
-            st.success("Evaluation submitted successfully!")
+            with st.spinner("Evaluating response..."):
+                pass
 
 if __name__ == "__main__":
     main()
