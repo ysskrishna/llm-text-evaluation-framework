@@ -1,6 +1,7 @@
 import streamlit as st
 from core.database import init_db
 from components.sidebar import show_sidebar
+from ai.evaluator import evaluate_response
 
 def main():
     st.set_page_config(page_title="LLM Text Evaluation Framework", layout="wide")
@@ -24,7 +25,8 @@ def main():
             st.error("Please provide both responses.")
         else:
             with st.spinner("Evaluating response..."):
-                pass
+                scores = evaluate_response(llm_response, actual_response)
+                st.write(scores)
 
 if __name__ == "__main__":
     main()
