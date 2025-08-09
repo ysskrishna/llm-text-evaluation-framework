@@ -13,6 +13,16 @@ EVALUATION_CRITERIA_LIST = [
     EvaluationCriteria.ALIGNMENT_WITH_INTENT
 ]
 
+EVALUATION_CRITERIA_WEIGHTS = {
+    EvaluationCriteria.RELEVANCE: 0.2,
+    EvaluationCriteria.ACCURACY: 0.2,
+    EvaluationCriteria.COHERENCE: 0.1,
+    EvaluationCriteria.COMPLETENESS: 0.2,
+    EvaluationCriteria.CREATIVITY: 0.1,
+    EvaluationCriteria.TONE: 0.1,
+    EvaluationCriteria.ALIGNMENT_WITH_INTENT: 0.1
+}
+
 
 def evaluate_response(llm_response: str, actual_response: str) -> Dict[str, float]:
     if not llm_response or not actual_response:
@@ -42,3 +52,6 @@ def evaluate_response(llm_response: str, actual_response: str) -> Dict[str, floa
     scores[EvaluationCriteria.ALIGNMENT_WITH_INTENT.value] = calculate_alignment_with_intent(llm_response, actual_response)
     
     return scores
+
+def get_overall_score(scores: Dict[str, float]) -> float:
+    return sum(scores[criterion] * EVALUATION_CRITERIA_WEIGHTS[criterion] for criterion in EVALUATION_CRITERIA_LIST)
