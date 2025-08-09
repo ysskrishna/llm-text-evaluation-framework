@@ -1,5 +1,9 @@
+import streamlit as st
+
 def main():
-    print("Hello from llm-text-evaluation-framework!")
+    st.set_page_config(page_title="LLM Text Evaluation Framework", layout="wide")
+    
+    st.sidebar.header("LLM Text Evaluation Framework")
 
 
 if __name__ == "__main__":
