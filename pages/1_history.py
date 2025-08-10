@@ -57,15 +57,15 @@ def show_filtered_table():
     st.markdown("### 📋 Evaluation Records")
     
     # Filter options
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2 = st.columns([2,1])
     
     with col1:
-        date_filter = st.date_input(
-            "Filter by date:",
-            value=None,
-            help="Select a specific date to filter evaluations"
+        search_term = st.text_input(
+            "Search in responses:", 
+            placeholder="Enter keywords...",
+            help="Search in both LLM and actual responses"
         )
-    
+        
     with col2:
         score_filter = st.slider(
             "Minimum overall score:",
@@ -76,21 +76,14 @@ def show_filtered_table():
             help="Filter evaluations with scores above this threshold"
         )
     
-    with col3:
-        search_term = st.text_input(
-            "Search in responses:", 
-            placeholder="Enter keywords...",
-            help="Search in both LLM and actual responses"
-        )
     
-    with col4:
-        items_per_page = st.selectbox(
-            "Items per page:",
-            options=[5, 10, 20, 50],
-            index=1,
-            help="Number of evaluations to show per page"
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col1:
+        date_filter = st.date_input(
+            "Filter by date:",
+            value=None,
+            help="Select a specific date to filter evaluations"
         )
-    
     # Get total count for pagination
     total_items = get_evaluations_count(
         date_filter=date_filter.strftime('%Y-%m-%d') if date_filter else None,
@@ -98,20 +91,27 @@ def show_filtered_table():
         search_term=search_term
     )
     
-    if total_items == 0:
-        st.warning("No evaluations match the current filters.")
-        return
-    
+    with col2:
+            items_per_page = st.selectbox(
+            "Items per page:",
+            options=[5, 10, 20, 50],
+            index=1,
+            help="Number of evaluations to show per page"
+        )
     # Pagination
     total_pages = (total_items + items_per_page - 1) // items_per_page
-    
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
+    with col3:
         current_page = st.selectbox(
             f"Page (1-{total_pages}):",
             range(1, total_pages + 1),
             index=0
         )
+    
+    
+    if total_items == 0:
+        st.warning("No evaluations match the current filters.")
+        return
+        
     
     # Fetch paginated data from database
     evaluations, _ = get_evaluations_paginated(

@@ -3,18 +3,21 @@ import streamlit as st
 def show_sidebar():
     with st.sidebar:
         st.title("LLM Text Evaluation Framework")
+        st.sidebar.text("This framework scores responses based on the following criteria:")
         
-        st.sidebar.markdown("""
-        This framework evaluates LLM responses based on:
-        - **Relevance**: Semantic similarity
-        - **Accuracy**: Content correctness
-        - **Coherence**: Logical flow
-        - **Completeness**: Content coverage
-        - **Creativity**: Originality
-        - **Tone**: Appropriateness
-        - **Alignment**: Intent matching
-        """)
-                
+        criteria_info = {
+            'Relevance': 'Semantic similarity between LLM and expected response',
+            'Accuracy': 'Factual correctness and precision',
+            'Coherence': 'Logical flow and readability',
+            'Completeness': 'Coverage of expected content',
+            'Creativity': 'Originality and unique expression',
+            'Tone': 'Appropriateness and consistency',
+            'Alignment': "Match with user's intended purpose"
+        }
+        for criterion, description in criteria_info.items():
+            st.sidebar.text(criterion, help=description)
+        
+        st.sidebar.markdown("---")
         # Author Section using Streamlit native components
         st.sidebar.markdown("### Author")
         st.sidebar.markdown("""
