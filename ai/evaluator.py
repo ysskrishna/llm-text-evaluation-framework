@@ -1,32 +1,12 @@
 from typing import Dict
 from models.enums import EvaluationCriteria
 from ai.evaluator_utils import calculate_relevance, calculate_accuracy, calculate_coherence, calculate_completeness, calculate_creativity, calculate_tone, calculate_alignment_with_intent
-
-
-EVALUATION_CRITERIA_LIST = [
-    EvaluationCriteria.RELEVANCE,
-    EvaluationCriteria.ACCURACY,
-    EvaluationCriteria.COHERENCE,
-    EvaluationCriteria.COMPLETENESS,
-    EvaluationCriteria.CREATIVITY,
-    EvaluationCriteria.TONE,
-    EvaluationCriteria.ALIGNMENT_WITH_INTENT
-]
-
-EVALUATION_CRITERIA_WEIGHTS = {
-    EvaluationCriteria.RELEVANCE: 0.2,
-    EvaluationCriteria.ACCURACY: 0.2,
-    EvaluationCriteria.COHERENCE: 0.1,
-    EvaluationCriteria.COMPLETENESS: 0.2,
-    EvaluationCriteria.CREATIVITY: 0.1,
-    EvaluationCriteria.TONE: 0.1,
-    EvaluationCriteria.ALIGNMENT_WITH_INTENT: 0.1
-}
+from core.config import Config
 
 
 def evaluate_response(llm_response: str, actual_response: str) -> Dict[str, float]:
     if not llm_response or not actual_response:
-        return {criterion: 0.0 for criterion in EVALUATION_CRITERIA_LIST}
+        return {criterion: 0.0 for criterion in Config.EVALUATION_CRITERIA_LIST}
     
     scores = {}
     
@@ -54,4 +34,4 @@ def evaluate_response(llm_response: str, actual_response: str) -> Dict[str, floa
     return scores
 
 def get_overall_score(scores: Dict[str, float]) -> float:
-    return sum(scores[criterion.value] * EVALUATION_CRITERIA_WEIGHTS[criterion] for criterion in EVALUATION_CRITERIA_LIST)
+    return sum(scores[criterion.value] * Config.EVALUATION_CRITERIA_WEIGHTS[criterion] for criterion in Config.EVALUATION_CRITERIA_LIST)
