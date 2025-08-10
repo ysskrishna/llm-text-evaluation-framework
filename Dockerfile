@@ -14,6 +14,9 @@ COPY pyproject.toml uv.lock ./
 
 RUN pip install uv && uv sync --frozen --no-dev
 
+# Download NLTK datasets
+RUN uv run python -m nltk.downloader punkt punkt_tab stopwords wordnet
+
 COPY . .
 
 CMD ["uv", "run", "streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
