@@ -10,4 +10,6 @@ dependencies = [
     "sqlmodel>=0.0.24",
     "streamlit>=1.48.0",
     "textstat>=0.7.8",
+    "plotly>=5.0.0",
+    "pandas>=1.5.0",
 ]

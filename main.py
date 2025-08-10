@@ -1,6 +1,7 @@
 import streamlit as st
 from core.database import init_db
 from components.sidebar import show_sidebar
+from components.evaluation_result import display_evaluation_results
 from ai.evaluator import evaluate_response, get_overall_score
 from repositories.evaluation import create_evaluation
 
@@ -28,9 +29,11 @@ def main():
             with st.spinner("Evaluating response..."):
                 scores = evaluate_response(llm_response, actual_response)
                 overall_score = get_overall_score(scores)
-                st.write(scores)
-                st.write(overall_score)
-                create_evaluation(llm_response, actual_response, scores, overall_score, notes)
+                
+                # Create and store the evaluation
+                evaluation = create_evaluation(llm_response, actual_response, scores, overall_score, notes)
+                evaluation_data = evaluation.model_dump()
+                display_evaluation_results(evaluation_data)
 
 if __name__ == "__main__":
     main()
