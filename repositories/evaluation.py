@@ -1,5 +1,5 @@
 from models.models import Evaluation
-from core.database import Session, engine
+from core.database import get_session
 
 def create_evaluation(
     llm_response: str,
@@ -23,7 +23,7 @@ def create_evaluation(
         notes=notes
     )
     
-    with Session(engine) as session:
+    with get_session() as session:
         session.add(evaluation)
         session.commit()
         session.refresh(evaluation)

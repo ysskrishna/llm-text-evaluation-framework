@@ -1,12 +1,17 @@
 from sqlmodel import SQLModel, create_engine, Session
 from core.config import Config
-from models.models import Evaluation # import all models, so that they are created in the database
+import streamlit as st
 
-engine = create_engine(Config.DATABASE_URL, echo=False)
-
+@st.cache_resource
+def get_engine():
+    return create_engine(Config.DATABASE_URL, echo=False)
+    
 def init_db():
-    SQLModel.metadata.create_all(engine)
+    # import all models, so that they are created in the database
+    from models.models import Evaluation
+    SQLModel.__table_args__ = {'extend_existing': True} # TODO: we are extending the existing tables to resolve streamlit file changes, need to find a better solution
+    SQLModel.metadata.create_all(get_engine())
+
 
 def get_session():
-    with Session(engine) as session:
-        yield session
+    return Session(get_engine())
