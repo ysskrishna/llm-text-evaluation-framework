@@ -4,15 +4,15 @@ def show_sidebar():
     with st.sidebar:
         st.title("LLM Text Evaluation Framework")
         st.sidebar.text("This framework scores responses based on the following criteria:")
-        
+
         criteria_info = {
-            'Relevance': 'Semantic similarity between LLM and expected response',
-            'Accuracy': 'Factual correctness and precision',
-            'Coherence': 'Logical flow and readability',
-            'Completeness': 'Coverage of expected content',
-            'Creativity': 'Originality and unique expression',
-            'Tone': 'Appropriateness and consistency',
-            'Alignment': "Match with user's intended purpose"
+            'Relevance': "Measures how semantically similar the LLM response is to the expected response.",
+            'Accuracy': "Assesses the factual correctness and precision of the content.",
+            'Coherence': "Evaluates the logical flow, readability, and sentence structure.",
+            'Completeness': "Checks how well the response covers all expected content points.",
+            'Creativity': "Measures originality and unique expression while maintaining relevance.",
+            'Tone': "Assesses appropriateness, consistency, and professional language use.",
+            'Alignment': "Evaluates how well the response matches the user's intended purpose."
         }
         for criterion, description in criteria_info.items():
             st.sidebar.text(criterion, help=description)
