@@ -35,11 +35,8 @@ def show_sidebar():
         
 
 
-        if st.sidebar.button("🐙 GitHub: @ysskrishna", key="github_link"):
-            st.markdown("[GitHub Profile](https://github.com/ysskrishna)")
+        st.sidebar.link_button("🐙 GitHub: @ysskrishna", "https://github.com/ysskrishna")
         
-        if st.sidebar.button("💼 LinkedIn: @ysskrishna", key="linkedin_link"):
-            st.markdown("[LinkedIn Profile](https://linkedin.com/in/ysskrishna)")
+        st.sidebar.link_button("💼 LinkedIn: @ysskrishna", "https://linkedin.com/in/ysskrishna")
         
-        if st.sidebar.button("📁 View Source", type="primary", key="repo_link"):
-            st.markdown("[Repository](https://github.com/ysskrishna/llm-text-evaluation-framework)")
+        st.sidebar.link_button("📁 View Source", "https://github.com/ysskrishna/llm-text-evaluation-framework", type="primary")

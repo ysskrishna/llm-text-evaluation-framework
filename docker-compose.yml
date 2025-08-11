@@ -10,6 +10,8 @@ services:
     environment:
       - PYTHONPATH=/app
     restart: unless-stopped
+    volumes:
+      - ./llm_evaluations.db:/app/llm_evaluations.db
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
       interval: 30s
