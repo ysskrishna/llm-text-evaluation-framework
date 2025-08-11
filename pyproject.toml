@@ -1,9 +1,88 @@
 [project]
 name = "llm-text-evaluation-framework"
 version = "1.0.0"
-description = "Add your description here"
+description = "A powerful, production-ready Streamlit web application for comprehensive LLM response evaluation and benchmarking. Features multi-dimensional scoring across 7 key criteria, interactive analytics dashboard, persistent evaluation history, and Docker deployment. Perfect for AI researchers, developers, and organizations seeking to systematically assess and improve their language model outputs with detailed metrics and visual insights."
 readme = "README.md"
 requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "ysskrishna", email = "sivasaikrishnassk@gmail.com"}
+]
+keywords = [
+    "llm",
+    "large-language-model",
+    "evaluation",
+    "benchmarking",
+    "text-analysis",
+    "nlp",
+    "natural-language-processing",
+    "streamlit",
+    "web-app",
+    "ai-assessment",
+    "machine-learning",
+    "response-quality",
+    "semantic-similarity", 
+    "text-evaluation",
+    "ai-metrics",
+    "chatgpt",
+    "gpt",
+    "claude",
+    "gemini",
+    "model-evaluation",
+    "ai-benchmark",
+    "text-scoring",
+    "coherence",
+    "relevance",
+    "accuracy",
+    "completeness",
+    "creativity",
+    "tone-analysis",
+    "intent-alignment",
+    "text-quality",
+    "ai-research",
+    "nlp-tools",
+    "text-metrics",
+    "language-model",
+    "ai-validation",
+    "streamlit-app",
+    "docker",
+    "sqlite",
+    "sentence-transformers",
+    "nltk",
+    "plotly",
+    "analytics",
+    "dashboard",
+    "visualization",
+    "interactive",
+    "python",
+    "open-source",
+    "ysskrishna"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Text Processing :: Linguistic",
+    "Topic :: Text Processing :: Filters",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Database :: Database Engines/Servers",
+    "Environment :: Web Environment",
+    "Framework :: Streamlit",
+    "Natural Language :: English",
+    "Typing :: Typed",
+]
 dependencies = [
     "nltk>=3.9.1",
     "sentence-transformers>=5.1.0",
@@ -13,3 +92,9 @@ dependencies = [
     "plotly>=5.0.0",
     "pandas>=1.5.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/ysskrishna/llm-text-evaluation-framework"
+Repository = "https://github.com/ysskrishna/llm-text-evaluation-framework.git"
+Documentation = "https://github.com/ysskrishna/llm-text-evaluation-framework#readme"
+Issues = "https://github.com/ysskrishna/llm-text-evaluation-framework/issues"
