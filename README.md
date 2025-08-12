@@ -11,8 +11,8 @@
 
 A powerful, production-ready Streamlit web application for comprehensive LLM response evaluation and benchmarking. Features multi-dimensional scoring across 7 key criteria, interactive analytics dashboard, persistent evaluation history, and Docker deployment. Perfect for AI researchers, developers, and organizations seeking to systematically assess and improve their language model outputs with detailed metrics and visual insights.
 
-![AI Healthcare Assistant - Home](media/home.png)
-![AI Healthcare Assistant - History](media/history.png)
+![LLM Text Evaluation Framework - Home](media/home.png)
+![LLM Text Evaluation Framework - History](media/history.png)
 
 ## 📌 Features
 

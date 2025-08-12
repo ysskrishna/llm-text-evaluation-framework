@@ -23,6 +23,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Evaluation history & analytics dashboard** with persistent SQLite storage
 - **Customizable scoring weights** via `core/config.py`
 - **Modular architecture** with dedicated folders for AI logic, UI components, models, repositories, and pages
+- **Media samples** for demonstration and testing purposes
+- **Release automation** with `createrelease.sh` script for streamlined version management
 - **Deployment ready**:
     - Run via **Docker Compose** for production
     - Run locally with **UV** package manager for development
