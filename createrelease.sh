@@ -16,6 +16,7 @@ validate_version() {
 # Main release process
 create_release() {
     local version=$1
+    local branch_name="version-$version"
     
     # Check version in pyproject.toml
     local pyproject_version=$(grep '^version' pyproject.toml | sed 's/version *= *"\([^"]*\)"/\1/')
