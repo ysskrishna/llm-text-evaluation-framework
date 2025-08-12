@@ -26,38 +26,22 @@ create_release() {
 
     echo "🚀 Starting release process for v$version"
     
-    # Activate virtual environment
-    echo "🐍 Activating virtual environment..."
-    source venv/Scripts/activate
-    
-    # Build package
-    echo "🔨 Building package..."
-    python -m build
-    
-    # Check package
-    echo "🔍 Checking package..."
-    python -m twine check dist/*
-    
-    # Upload to PyPI
-    echo "🚀 Uploading to PyPI..."
-    python -m twine upload dist/*
-    if [ $? -ne 0 ]; then
-        echo "❌ PyPI upload failed. Aborting release."
-        exit 1
-    fi
-    
     # Ensure we're on main branch and it's up to date
     echo "📥 Updating main branch..."
     git checkout main
     git pull origin main
-    git push origin main
+    
+    # Create or checkout version branch
+    echo "🌿 Creating/checking out branch '$branch_name'..."
+    git checkout -b $branch_name
     
     # Create tag
     echo "🏷️ Creating release tag 'v$version'..."
     git tag -a "v$version" -m "Release version $version"
     
     # Push changes
-    echo "📤 Pushing tag 'v$version'..."
+    echo "📤 Pushing branch '$branch_name' and tag 'v$version'..."
+    git push origin $branch_name
     git push origin "v$version"
     
     echo "✅ Release process completed for version v$version"
