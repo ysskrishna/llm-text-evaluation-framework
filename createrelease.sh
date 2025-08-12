@@ -30,6 +30,7 @@ create_release() {
     echo "📥 Updating main branch..."
     git checkout main
     git pull origin main
+    git push origin main
     
     # Create or checkout version branch
     echo "🌿 Creating/checking out branch '$branch_name'..."
