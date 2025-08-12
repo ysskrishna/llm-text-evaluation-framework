@@ -123,6 +123,14 @@ EVALUATION_CRITERIA_WEIGHTS = {
 SQLite database (`llm_evaluations.db`)
 
 
+## 🚀 Future Enhancements
+- [ ] **Export your results** - to Excel, CSV, or PDF reports
+- [ ] **Batch testing** - evaluate hundreds of responses at once
+- [ ] **Better analytics** - more charts and insights
+- [ ] **Database Scalability** - Support PostgreSQL for large deployments
+- [ ] **API access** - integrate with your own tools/workflow
+- [ ] **Settings page** - for evaluation weights and settings via ui
+
 ## 🤝 Contributing
 
 1. Fork the repository
