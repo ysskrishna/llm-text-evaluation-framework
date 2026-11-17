@@ -8,6 +8,8 @@
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://docker.com/)
 [![UV](https://img.shields.io/badge/UV-Package%20Manager-green.svg)](https://docs.astral.sh/uv/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/ysskrishna/llm-text-evaluation-framework?label=release)](https://github.com/ysskrishna/llm-text-evaluation-framework/releases)
+[![Author site](https://img.shields.io/badge/author-ysskrishna.space-informational)](https://ysskrishna.space)
 
 A powerful, production-ready Streamlit web application for comprehensive LLM response evaluation and benchmarking. Features multi-dimensional scoring across 7 key criteria, interactive analytics dashboard, persistent evaluation history, and Docker deployment. Perfect for AI researchers, developers, and organizations seeking to systematically assess and improve their language model outputs with detailed metrics and visual insights.
 
@@ -142,10 +144,36 @@ SQLite database (`llm_evaluations.db`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## Built and maintained by
 
-## 📜 License
+LLM Text Evaluation Framework is built and maintained by:
 
-This project is released under the **MIT License**.
-See [LICENSE](LICENSE) for details.
+| | Name | GitHub | Role |
+|---|------|--------|------|
+| <img src="https://github.com/ysskrishna.png?size=120" width="60" height="60" alt="Y. Siva Sai Krishna"> | **Y. Siva Sai Krishna** | [@ysskrishna](https://github.com/ysskrishna) | Creator |
 
-**Author:** [Siva Sai Krishna](https://github.com/ysskrishna)
+## Changelog
+
+See [CHANGELOG](CHANGELOG.md) for release history.
+
+## Support
+
+If you find this project helpful:
+
+- ⭐ Star the repository
+- 🐛 [Report issues](https://github.com/ysskrishna/llm-text-evaluation-framework/issues)
+- 🔀 Submit pull requests
+- 💝 [Sponsor on GitHub](https://github.com/sponsors/ysskrishna)
+
+## License
+
+MIT © [Y. Siva Sai Krishna](https://github.com/ysskrishna) — see [LICENSE](LICENSE) for details.
+
+---
+
+<p align="left">
+  <a href="https://github.com/ysskrishna">Author's GitHub</a> •
+  <a href="https://linkedin.com/in/ysskrishna">Author's LinkedIn</a> •
+  <a href="https://ysskrishna.space">Author's site</a> •
+  <a href="https://github.com/ysskrishna/llm-text-evaluation-framework/issues">Report Issues</a>
+</p>
